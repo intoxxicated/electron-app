@@ -1,4 +1,4 @@
-const {app,BrowserWindow} =require('electron')
+const {app,BrowserWindow,WebContents} =require('electron')
 const windowStateKeeper = require('electron-window-state');
 let win;
 function createWindow() {
@@ -28,7 +28,7 @@ function createWindow() {
     win.loadFile('index.html')
     mainWindowState.manage(win);
     let wc = win.WebContents;
-    console.warn(wc)
+
 }
 
 app.whenReady().then(createWindow)
